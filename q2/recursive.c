@@ -1,39 +1,14 @@
 /* FIXME: Implement! */
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-char smallest_character(char str[], char c, int len)
+char smallest_character(char str[], char c, int index)
 {
-    if(str[len-1] > c)
-        return smallest_character(str, c, len-1);
-    else if(len == 0 || len == strlen(str)) {
-        return str[0];
-    } else
-        return str[len];
-
-}
-
-int main()
-{
-    FILE *fp;
-    char buffer[1024];
-    int i = 0,c=0;
-    fp = fopen("str_array.txt","r");
-    if( fp == NULL)
-        printf("Open failure\n");
-    else {
-        for(c = fgetc(fp); c != EOF ; i++) {
-            buffer[i] = c;
-            c = fgetc(fp);
-        }
+    if( str[index] != 127){
+        if(str[index] > c)
+            return str[index];
+        else
+            return smallest_character(str, c, ++index);
     }
-    fclose(fp);
-    char str[i];
-    strncpy(str,buffer,i);
-    char temp = 'a';
-    while(temp++ <= 'z')
-        smallest_character(str,temp,i);
-    return 0;
+    return str[0];
+
 }
+
 
