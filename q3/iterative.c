@@ -59,7 +59,7 @@ int main()
     clock_gettime(CLOCK_REALTIME, &end);
     endtime =  diff_in_second(start, end);
     fprintf(fp, "%.9lf\n",endtime);
-
+    fclose(fp);
     // print_preorder(root);
     // printf("\n");
     // print_inorder(root);
