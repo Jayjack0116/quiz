@@ -1,7 +1,6 @@
 /* FIXME: Implement! */
 // A utility funtion to find maximum of two integers
 #include <stdlib.h>
-#include <stdio.h>
 #include <limits.h>
 
 int max_2(int a, int b)
@@ -66,14 +65,4 @@ int maxSubArraySum(int arr[], int l, int h)
 int maxSubArray(int* s, int ns)
 {
     maxSubArraySum(s, 0,ns-1);
-}
-
-int main()
-{
-    int arr[]= {-2,1,-3,4,-1,2,1,-5,4};
-    int len = sizeof(arr) / sizeof(arr[0]);
-    maxSubArray(arr, len);
-    // int max = maxSubArray(arr, len);
-    // printf("Maximum contiguous sum = %d\n", max);
-    return 0;
 }
